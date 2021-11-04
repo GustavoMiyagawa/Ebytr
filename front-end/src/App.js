@@ -1,8 +1,12 @@
 import React from 'react';
+import ListToDo from './components/ListToDo';
 
 function App() {
   return (
-    <h1>Teste</h1>
+    <div>
+      <h1>Um texto aqui</h1>
+      <ListToDo />
+    </div>
   );
 }
 

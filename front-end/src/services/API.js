@@ -12,3 +12,11 @@ export const AddTaskAPI = async (task) => {
     method: 'POST'
   });
 }
+
+export const removeTaskAPI = async (task) => {
+  await fetch('http://localhost:3001', {
+    body: JSON.stringify(task),
+    headers: { 'Content-Type': 'application/json'},
+    method: 'DELETE'
+  });
+}

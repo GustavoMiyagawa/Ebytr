@@ -1,3 +1,4 @@
+const { ObjectID } = require('bson');
 const getConnection = require('./connection');
 
 const getList = async () => {
@@ -12,7 +13,13 @@ const create = async (task) => {
   return task;
 };
 
+const removeTask = async (idTask) => {
+  const db = await getConnection();
+  await db.collection('list').deleteOne({ _id: ObjectID(idTask)});
+};
+
 module.exports = {
   getList,
   create,
+  removeTask
 };

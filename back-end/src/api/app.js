@@ -12,5 +12,6 @@ app.use(bodyParser.json());
 
 app.get('/', listController.getList);
 app.post('/', listController.create);
+app.delete('/', listController.removeTask);
 
 module.exports = app;

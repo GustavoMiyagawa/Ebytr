@@ -12,7 +12,12 @@ const create = async (task) => {
   return createTask;
 };
 
+const removeTask = async (idTask) => {
+  const createTask = await listModel.removeTask(idTask);
+};
+
 module.exports = {
   getList,
   create,
+  removeTask,
 };

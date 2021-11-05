@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
+import Context from '../context/Context';
 
 export default function ListToDo() {
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3001')
-    .then((data) => data.json())
-    .then((list) => setList(list));
-  }, []);
+  const { list } = useContext(Context);
 
   return (
     <ul>
-      { list.map((l) => (
-        <li>teste: {l.nome}</li>
+      {list.map((l) => (
+        <li>
+          {l.task}
+          <button>{l._id}</button>
+        </li>
       ))}
     </ul>
   );

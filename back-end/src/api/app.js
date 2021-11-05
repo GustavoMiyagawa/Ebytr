@@ -11,5 +11,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', listController.getList);
+app.post('/', listController.create);
 
 module.exports = app;

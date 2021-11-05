@@ -6,6 +6,13 @@ const getList = async () => {
   return list;
 };
 
+const create = async (task) => {
+  const createTask = await listModel.create(task);
+
+  return createTask;
+};
+
 module.exports = {
   getList,
+  create,
 };

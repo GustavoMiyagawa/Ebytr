@@ -7,10 +7,12 @@ const getList = async (_req, res) => {
 };
 
 const create = async (req, res) => {
-  const task  = req.body;
+  const { task }  = req.body;
 
-  const createTask = await listService.create(task);
+  const { status, message } = await listService.create(task);
 
+  if (status) return res.status(status).json({ message });
+  
   return res.status(201).json(createTask);
 };
 

@@ -1,4 +1,5 @@
 const listModel = require('../model/listModel');
+const errorMessage = require('./errorMessages');
 
 const getList = async () => {
   const list = await listModel.getList();
@@ -7,6 +8,9 @@ const getList = async () => {
 };
 
 const create = async (task) => {
+
+  if (!task) return errorMessage.emptyTask;
+
   const createTask = await listModel.create(task);
 
   return createTask;

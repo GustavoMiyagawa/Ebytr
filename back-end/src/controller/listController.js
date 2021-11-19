@@ -9,11 +9,11 @@ const getList = async (_req, res) => {
 const create = async (req, res) => {
   const { task }  = req.body;
 
-  const { status, message } = await listService.create(task);
+  const { status, message,result } = await listService.create(task);
 
   if (status) return res.status(status).json({ message });
   
-  return res.status(201).json(createTask);
+  return res.status(201).json(result);
 };
 
 const removeTask = async (req, res) => {

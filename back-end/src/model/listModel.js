@@ -9,8 +9,8 @@ const getList = async () => {
 
 const create = async (task) => {
   const db = await getConnection();
-  await db.collection('list').insertOne(task);
-  return task;
+  await db.collection('list').insertOne({task});
+  return {task: task};
 };
 
 const removeTask = async (idTask) => {

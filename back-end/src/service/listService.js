@@ -13,7 +13,7 @@ const create = async (task) => {
 
   const createTask = await listModel.create(task);
 
-  return createTask;
+  return {result: createTask};
 };
 
 const removeTask = async (idTask) => {
